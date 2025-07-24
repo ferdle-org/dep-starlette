@@ -1,0 +1,31 @@
+[build-system]
+requires = ["poetry-core~=2.1"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.test]
+optional = true
+
+[project]
+name = "pipeline-status-ui"
+requires-python = "~=3.12"
+
+[tool.poetry.dependencies]
+python = "~=3.12"
+alembic = "~=1.16"
+boto3 = "~=1.39"
+fastapi = "~=0.116.1"
+gunicorn = "~=23.0"
+Jinja2 = "~=3.1"
+psycopg2-binary = "~=2.9"
+requests = "~=2.32"
+SQLAlchemy = "~=1.4"
+uvicorn-worker = "~=0.3.0"
+
+[tool.poetry.group.test.dependencies]
+aws_lambda_typing = "~=2.20"
+boto3-stubs = {extras = ["apigateway", "boto3", "dynamodb", "s3"], version = "~=1.39"}
+pytest = "~=8.4"
+pytest-alembic = "~=0.12.1"
